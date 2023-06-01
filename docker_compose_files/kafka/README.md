@@ -10,7 +10,7 @@
 
 ## Write messages to the topic
 
-### docker exec --interactive --tty broker afka-console-producer --bootstrap-server broker:9092 --topic TOPIC_NAME
+### docker exec --interactive --tty broker kafka-console-producer --bootstrap-server broker:9092 --topic TOPIC_NAME
 
 ## Read messages from the topic
 
