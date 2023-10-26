@@ -8,6 +8,9 @@
 
 ### docker exec broker kafka-topics --bootstrap-server broker:9092 --create --topic TOPIC_NAME
 
+## Describe topic
+### kafka-topics --bootstrap-server kafka-broker-1:9092 --describe --topic userlog
+
 ## Write messages to the topic
 
 ### docker exec --interactive --tty broker kafka-console-producer --bootstrap-server broker:9092 --topic TOPIC_NAME
