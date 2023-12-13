@@ -1,4 +1,10 @@
 # K8s
+### K8s takes care of automatic deployment of containeraised applications across different servers
+### Distribution of load across multiple servers
+### Auto-scaling of deployed application
+### Monitoring and helth checks of containers
+### Replcacement of failed containers
+
 ## Get Namespaces
 ### kubectl get namespaces
 ## Details of specific namespace
@@ -27,6 +33,29 @@ metadata:
 ## Expose service to outside world
 ### kubectl expose deployment new-proms-proj --type=LoadBalancer --port=8008
 ## Events that occured 
+## K8s cluster
+### In k8s cluster there is one master node and multiple worker nodes.
+### Master node manages worker node. like distubuting load acros worker nodes
+![image info](pics/master-worker.png)
+
+### Master node like control pannel
+## K8S Service
+### Master node service
+### 1. kubelet
+### 2. kube-proxy : Networks comminication inside node and between multiple nodes.
+### 3. Container Runtime : runs containers inside each node.
+### 4. API-Server: provides communication between different nodes. and we can manage cluster using this service
+### 5. Scheduler : Plan and distrubution of load between nodes.
+### 6. Kube Control Manager : It is controller in cluster, it tells what need to happen in cluster.
+### 7. Cloud controller Manager : provides interaction between cloud provider.
+### 8. etcd : stores logs operations of entair k8s cluster. they are stored in key-value pair.
+### DNS: Kubernetes creates DNS records for Services and Pods. You can contact Services with consistent DNS names instead of IP addresses.
+![image info](pics/k8s-node-service.png)
+## Cluster Management
+### We can manage cluster using kubectl
+### It is a command line tool, allows user to connect to specific cluster and manage service remotly.
+![image info](pics/k8s-cluster-management.png)
+
 ## What is pod
 ### Pod is the smallest deployable unit or basic building blocks of Kubernetes that can be managed serve as the unit of scaling. 
 ### Pods can contain one or multiple tightly coupled containers that are scheduled together on the same node and share the same context, including IP address and port space.
@@ -41,6 +70,12 @@ metadata:
 ### Get replica set:- kubectl get replicaSet
 ### Deployment:- kubectl get deployment
 ### Get service:- kubectl get service
+## Node
+### Node is server or bare metal server or Virtual mechine in kubernetes cluster, they are localled in different locations in the world.
+### Nodes related to same k8s cluster are kept close to each other to reduce latency.
+### Inside nodes there are pods
+### inside pods there can be multiple conatiners
+![image info](pics/k8s-cluster.png)
 ## ReplicaSet
 ### ReplicaSet is a controller object used to ensure that a specified number of identical Pods are running at all times.
 ### It's a higher-level abstraction that helps maintain a defined number of Pod replicas, enabling high availability and scalability for applications.
@@ -56,4 +91,8 @@ metadata:
 ## Events occured in K8s
 ### kubectl get events --sort-by=.metadata.creationTimestamp
 ### Deploying pod with new image version:- kubectl set image deployment new-proms-proj grafana-prometheus=DUMMY:TEST
+
+
+#### kubectl get nodes
+#### kubectl run nginx --image=nginx
 
