@@ -86,13 +86,17 @@ metadata:
 ### Selectors: ReplicaSets use label selectors to identify the Pods they are responsible for managing. They continuously monitor and reconcile the number of Pods with matching labels.
 
 ### Create replicas :- kubectl scale  deployment new-proms-proj --replicas=3
+### kubectl scale deployment nginx-deployment --replicas=5
 ### get replica info:- kubectl get replicaset
 ### Get replica more info:- kubectl get replicaset -o wide
 ## Events occured in K8s
 ### kubectl get events --sort-by=.metadata.creationTimestamp
 ### Deploying pod with new image version:- kubectl set image deployment new-proms-proj grafana-prometheus=DUMMY:TEST
 
-
+## DEployment
+### kubectl create deployment nginx-deployment --image=nginx
+### kubectl describe deployment nginx-deployment
+### Selectors are used to connect pods with deployment
 #### kubectl get nodes
 #### kubectl run nginx --image=nginx
 
