@@ -99,4 +99,14 @@ metadata:
 ### Selectors are used to connect pods with deployment
 #### kubectl get nodes
 #### kubectl run nginx --image=nginx
+## Service
+### Create service type NodePOrt
+### Create service type LoadBalancer :kubectl expose deployment k8s-web-hello --type=LoadBalancer --port=3000
+### minikube service to expose application publically: minikube service k8s-web-hello
+### Deploying new latest image 
+### kubectl set image deployment k8s-web-hello k8s-hello-web=dasari508201/k8s-web-hello:0.0.2
+### Rolling out new version : kubectl rollout status deploy k8s-web-hello
+#### Delete all from minikube : delete all --all
+
+
 
